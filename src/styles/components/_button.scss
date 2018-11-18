@@ -1,0 +1,45 @@
+.button {
+  background: $blue;
+  border: 0;
+  color: white;
+  display: flex;
+  height: 5rem;
+  font-size: $font-size-large;
+  font-weight: 300;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: $s-size;
+  text-decoration: none;
+  width: 20rem;
+}
+
+.button:hover {
+  color: $gold;
+  font-weight: bold;
+}
+
+.button--remove {
+  margin: 0 $s-size;
+}
+
+.button--copy {
+  margin: 0 $s-size;
+}
+
+.button__layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto $s-size auto;
+}
+
+@media (max-width: 500px) {
+  .button {
+
+  }
+  .button--copy {
+    margin-bottom: $s-size;
+  }
+}

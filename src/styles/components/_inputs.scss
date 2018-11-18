@@ -1,0 +1,24 @@
+.text-input {
+  background: $dark-grey;
+  border: 1px solid $off-white;
+  color: $off-white;
+  font-size: $font-size-medium;
+  font-weight: 300;
+  margin: 0 auto $s-size auto;
+  max-width: 100%;
+  padding: $s-size;
+  width: 90rem;
+}
+
+.text-input::placeholder {
+  color: $off-white;
+}
+
+.select {
+  @extend .text-input;
+}
+
+// .textarea {
+//   @extend .text-input;
+//   height: 10rem;
+// }

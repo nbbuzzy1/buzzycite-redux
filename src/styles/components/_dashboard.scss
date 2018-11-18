@@ -1,0 +1,28 @@
+.dashboard__court {
+  text-decoration: none;
+  background: $gold;
+  color: $dark-grey;
+  margin: $s-size 0;
+  font-size: $font-size-large;
+  font-weight: bold;
+  padding: $s-size;
+  border-radius: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 40rem) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.dashboard__court:hover {
+  background:$dark-grey;
+  color: $gold;
+}
+
+.dashboard__title {
+  color: $gold;
+  display: flex;
+  justify-content: center;
+}
