@@ -2,19 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addCitation } from '../actions/citations';
 
-const SaveCitation = (props, { fullCitation }) => (
+const SaveCitation = (props) => (
   <div>
-    {props.citation && <button 
+    {props.fullCitation && <button 
+      className="button"
       onClick={() => {
-        props.dispatch(addCitation({ fullCitation }))
+        if (props.fullCitation) {
+          props.dispatch(addCitation({ fullCitation: props.fullCitation, createdAt: 25 }));
+          props.history.push('/CitationList');
+        }
       }}>Save citation</button>}
   </div>
 )
 
-const mapStateToProps = (state) => {
-  return {
-    citations: state.citations
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     citations: state.citations
+//   }
+// }
 
-export default connect(mapStateToProps)(SaveCitation);
+export default connect()(SaveCitation);

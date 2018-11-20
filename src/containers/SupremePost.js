@@ -16,7 +16,7 @@ import SaveCitation from '../components/SaveCitation';
 import { addCitation } from '../actions/citations';
 
 
-class SupremePost extends React.Component {
+export default class SupremePost extends React.Component {
   state = {
     partyOne: "",
     partyTwo: "", 
@@ -265,8 +265,8 @@ class SupremePost extends React.Component {
             citation={this.state.citation}
           />
           <SaveCitation
-            citation={this.state.citation}
             fullCitation={this.state.fullCitation}
+            history={this.props.history}
           />
         </div>
       </div>
@@ -274,10 +274,10 @@ class SupremePost extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    citations: selectCitations(state.citations, state.filters),
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     citations: selectCitations(state.citations, state.filters),
+//   };
+// };
 
-export default connect(mapStateToProps)(SupremePost);
+// export default connect(mapStateToProps)(SupremePost);
