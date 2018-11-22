@@ -5,7 +5,7 @@ import selectCitations from '../selectors/citations';
 import CitationListFilters from '../components/CitationListFilters';
 
 const CitationList = (props) => (
-  <div>
+  <div className="content-container">
     <h1>Case List</h1>
     <CitationListFilters />
     {props.citations.map((citation) => {

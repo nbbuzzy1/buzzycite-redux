@@ -15,6 +15,7 @@ import CopyCitation from '../components/CopyCitation';
 import SaveCitation from '../components/SaveCitation';
 import { addCitation } from '../actions/citations';
 import moment from 'moment';
+import SaveModal from '../components/SaveModal';
 
 
 export default class SupremePost extends React.Component {
@@ -34,7 +35,10 @@ export default class SupremePost extends React.Component {
     parties: "",
     citation: "",
     fullCitation: "",
-    createdAt: ""
+    createdAt: "",
+    saveCitation: false,
+    type: "",
+    note: ""
   };
   handlePartyOne = (e) => {
     this.setState({
@@ -196,7 +200,8 @@ export default class SupremePost extends React.Component {
       pinpointNumber: "",
       pinpointDisplay: "",
       year: "",
-      webcite: ""
+      webcite: "",
+      fullCitation: ""
     })
   }
   startCopyCitation = (citationText) => {
@@ -211,6 +216,26 @@ export default class SupremePost extends React.Component {
   }
   handleStartCitation = (e) => {
     e.preventDefault();
+  }
+  handleSaveCitation = () => {
+    this.setState({
+      saveCitation: true
+    })
+  }
+  handleClearSaveCitation = () => {
+    this.setState({
+      saveCitation: false
+    }) 
+  }
+  handleAddType = (e) => {
+    this.setState({
+      type: e.target.value
+    }) 
+  }
+  handleAddNote = (e) => {
+    this.setState({
+      note: e.target.value
+    }) 
   }
   render() {
     return (
@@ -273,10 +298,22 @@ export default class SupremePost extends React.Component {
           />
           <SaveCitation
             fullCitation={this.state.fullCitation}
-            history={this.props.history}
-            createdAt={this.state.createdAt}
+            saveCitation={this.state.saveCitation}
+            handleSaveCitation={this.handleSaveCitation}
           />
         </div>
+        <SaveModal
+          fullCitation={this.state.fullCitation}
+          saveCitation={this.state.saveCitation}
+          handleClearSaveCitation={this.handleClearSaveCitation}
+          history={this.props.history}
+          createdAt={this.state.createdAt}
+          type={this.state.type} 
+          note={this.state.note}
+          dispatch={this.props.dispatch}
+          handleAddType={this.handleAddType}
+          handleAddNote={this.handleAddNote}
+        />
       </div>
     );
   }
