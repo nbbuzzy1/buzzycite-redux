@@ -13,11 +13,22 @@ export const addCitation = (
   citation: {
     id: uuid(),
     fullCitation,
-    type,
     note,
     createdAt
   }
 });
+
+export const addType = (
+  {
+    type = ''
+  } = {}
+) => ({
+  type: 'ADD_TYPE',
+  citation: {
+    type
+  }
+})
+
 
 // REMOVE_CASE
 export const removeCitation = ({ id } = {}) => ({

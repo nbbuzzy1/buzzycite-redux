@@ -14,9 +14,9 @@ import LoadingPage from './containers/LoadingPage';
 
 const store = configureStore();
 
-store.dispatch(addCitation({ fullCitation: 'state v. smith', type: 'criminal law', note: 'good case', createdAt: -21000 }));
-store.dispatch(addCitation({ fullCitation: 'us v. virginia', type: 'constitutional law', note: 'bad case', createdAt: -1000 }));
-store.dispatch(addCitation({ fullCitation: 'state v. purefoy', type: 'criminal law', note: 'bad case', createdAt: -15000 }));
+store.dispatch(addCitation({ fullCitation: 'state v. smith', createdAt: -21000 }));
+store.dispatch(addCitation({ fullCitation: 'us v. virginia', createdAt: -1000 }));
+store.dispatch(addCitation({ fullCitation: 'state v. purefoy', createdAt: -15000 }));
 // store.dispatch(setTextFilter('virginia'));
 
 const state = store.getState();

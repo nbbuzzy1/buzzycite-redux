@@ -14,6 +14,7 @@ import RemoveCitation from '../components/RemoveCitation';
 import CopyCitation from '../components/CopyCitation';
 import SaveCitation from '../components/SaveCitation';
 import { addCitation } from '../actions/citations';
+import moment from 'moment';
 
 
 export default class SupremePost extends React.Component {
@@ -32,7 +33,8 @@ export default class SupremePost extends React.Component {
     webcite: "",
     parties: "",
     citation: "",
-    fullCitation: ""
+    fullCitation: "",
+    createdAt: ""
   };
   handlePartyOne = (e) => {
     this.setState({
@@ -104,6 +106,7 @@ export default class SupremePost extends React.Component {
       }
     }
     let newPartyTwo = splitPartyTwo.join(" ");
+    const now = moment().format('MMM D, YYYY').toString()
 
     if (this.state.partyOne && this.state.partyTwo && this.state.ohioVolume && this.state.ohioVolume && this.state.ohioFirstPage && this.state.regionalVolume && this.state.regionalReporter && this.state.regionalFirstPage && this.state.webcite && this.state.year) {
       this.setState({
@@ -116,7 +119,11 @@ export default class SupremePost extends React.Component {
       this.setState({
         fullCitation: `${newPartyOne} v. ${newPartyTwo}, ${this.state.ohioVolume} ${this.state.ohioReporter} ${this.state.ohioFirstPage}, ${this.state.year}-Ohio-${this.state.webcite}, ${this.state.regionalVolume} ${this.state.regionalReporter} ${this.state.regionalFirstPage}${this.state.pinpointDisplay}`
       })
+      this.setState({
+        createdAt: now
+      })
     }
+    console.log(this.state.createdAt)
   }
   handleOhioVolume = (e) => {
     this.setState({
@@ -267,6 +274,7 @@ export default class SupremePost extends React.Component {
           <SaveCitation
             fullCitation={this.state.fullCitation}
             history={this.props.history}
+            createdAt={this.state.createdAt}
           />
         </div>
       </div>

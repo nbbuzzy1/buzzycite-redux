@@ -9,6 +9,11 @@ export default (state = citationsReducerDefaultState, action) => {
         ...state,
         action.citation
       ];
+    case 'ADD_TYPE':
+      return [
+        ...state,
+        action.citation
+      ];
     case 'REMOVE_CITATION':
       return state.filter(({ id }) => id !== action.id);
     case 'EDIT_CITATION':

@@ -8,7 +8,7 @@ const SaveCitation = (props) => (
       className="button"
       onClick={() => {
         if (props.fullCitation) {
-          props.dispatch(addCitation({ fullCitation: props.fullCitation, createdAt: 25 }));
+          props.dispatch(addCitation({ fullCitation: props.fullCitation, createdAt: props.createdAt }));
           props.history.push('/CitationList');
         }
       }}>Save citation</button>}
