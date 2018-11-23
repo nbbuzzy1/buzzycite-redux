@@ -3,11 +3,22 @@ import { connect } from 'react-redux';
 import { removeCitation } from '../actions/citations';
 
 const CitationListItem = ({ dispatch, fullCitation, id, type, note, createdAt }) => (
-  <div>
-      <h3>{fullCitation} {createdAt} {type}{note}</h3> 
-      <button onClick={() => {
-        dispatch(removeCitation({ id }))
-      }}>Remove</button>
+  <div className="citation-container">
+    <div className="citation">
+      {fullCitation}
+    </div>
+    <div className="citation__date">
+      {createdAt}
+    </div>
+    <div className="citation__type">
+      {type}
+    </div>
+    <div className="citation__note">
+      {note}
+    </div>
+    <button className="citation__button" onClick={() => {
+      dispatch(removeCitation({ id }))
+    }}>Remove</button>
   </div>
 );
 

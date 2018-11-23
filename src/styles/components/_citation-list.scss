@@ -1,0 +1,119 @@
+.citation-container {
+  display: flex;
+}
+
+.citation {
+  background: $dark-grey;
+  border: $off-white solid .5px;
+  padding: $s-size;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 25rem;
+  word-break: break-all;
+}
+
+.citation__date {
+  background: $dark-grey;
+  border: $off-white solid .5px;
+  padding: $s-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  word-break: break-all;
+}
+
+.citation__type {
+  background: $dark-grey;
+  border: $off-white solid .5px;
+  padding: $s-size;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-wrap: break-word;
+  width: 15rem;
+  word-break: break-all;
+}
+
+.citation__note {
+  background: $dark-grey;
+  border: $off-white solid .5px;
+  padding: $s-size;
+  display: flex;
+  align-items: center;
+  width: 60rem;
+  word-break: break-all;
+}
+
+.list-header {
+  align-items: center;
+  background: $off-white;
+  color: $off-white;
+  display: flex;
+  max-width: 124.6rem;
+}
+
+.list-header__citation {
+  background: $dark-grey;
+  // border: $off-white solid 1px;
+  padding: $s-size;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 25rem;
+
+}
+.list-header__date {
+  background: $dark-grey;
+  // border: $off-white solid 1px;
+  padding: $s-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  word-break: break-all;
+
+}
+
+.list-header__type {
+  background: $dark-grey;
+  // border: $off-white solid 1px;
+  padding: $s-size;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-wrap: break-word;
+  width: 15rem;
+  word-break: break-all;
+}
+
+.list-header__note {
+  background: $dark-grey;
+  // border: $off-white solid 1px;
+  padding: $s-size;
+  display: flex;
+  align-items: center;
+  width: 69.6rem;
+  justify-content: center;
+  // word-break: break-all;
+}
+
+.citation__button {
+  background: $blue;
+  border: $off-white solid 1px;
+  color: white;
+  display: flex;
+  font-size: $font-size-large;
+  font-weight: bold;
+  justify-content: center;
+  padding: $s-size;
+  text-decoration: none;
+  width: 9.6rem;
+}

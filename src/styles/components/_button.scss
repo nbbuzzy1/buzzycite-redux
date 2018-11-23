@@ -5,7 +5,7 @@
   display: flex;
   height: 5rem;
   font-size: $font-size-large;
-  font-weight: 300;
+  font-weight: bold;
   justify-content: center;
   line-height: 1;
   margin: 0 auto;
@@ -17,7 +17,6 @@
 
 .button:hover {
   color: $gold;
-  font-weight: bold;
 }
 
 .button--remove {

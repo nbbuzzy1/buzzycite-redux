@@ -5,14 +5,14 @@ import { addCitation } from '../actions/citations';
 
 const SaveModal = (props) => (
   <Modal
-    isOpen={!!props.saveCitation}
+    isOpen={props.saveCitation}
     onRequestClose={props.handleClearSaveCitation}
-    contentLabel="Hello!"
+    contentLabel="SaveModal"
     closeTimeoutMS={200}
     className="modal"
   >
-    <p>{props.fullCitation}</p>
-    <p>{props.createdAt}</p>
+    <h3>{props.fullCitation}</h3>
+    <h3>{props.createdAt}</h3>
     <input 
       autoFocus 
       className="text-input" 
@@ -43,12 +43,9 @@ const SaveModal = (props) => (
   </Modal>
 );
 
-// if (props.fullCitation) {
-//   props.dispatch(addCitation({ fullCitation: props.fullCitation, createdAt: props.createdAt }));
-//   props.history.push('/CitationList');
-// }
-
 export default connect()(SaveModal);
+
+
 
 // export default class SaveModal extends React.Component {
   // state = {
@@ -94,3 +91,8 @@ export default connect()(SaveModal);
 //   }
 // }
 
+// const mapStateToProps = (state) => {
+//   return {
+//     citations: state.citations,
+//   };
+// };

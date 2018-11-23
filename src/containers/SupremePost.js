@@ -37,8 +37,8 @@ export default class SupremePost extends React.Component {
     fullCitation: "",
     createdAt: "",
     saveCitation: false,
-    type: "",
-    note: ""
+    type: "None",
+    note: "None"
   };
   handlePartyOne = (e) => {
     this.setState({
