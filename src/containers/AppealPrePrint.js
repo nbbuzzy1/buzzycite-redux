@@ -10,6 +10,9 @@ import CiteCase from '../components/CiteCase';
 import Citation from '../components/Citation';
 import RemoveCitation from '../components/RemoveCitation';
 import CopyCitation from '../components/CopyCitation';
+import SaveCitation from '../components/SaveCitation';
+import SaveModal from '../components/SaveModal';
+import moment from 'moment';
 
 export default class SupremePost extends React.Component {
   state = {
@@ -27,7 +30,12 @@ export default class SupremePost extends React.Component {
     district: "",
     districtDisplay: "",
     parties: "",
-    citation: ""
+    citation: "",
+    fullCitation: "",
+    createdAt: "",
+    saveCitation: false,
+    type: "None",
+    note: "None"
   };
   handlePartyOne = (e) => {
     this.setState({
@@ -99,6 +107,7 @@ export default class SupremePost extends React.Component {
       }
     }
     let newPartyTwo = splitPartyTwo.join(" ");
+    const now = moment().format('MMM D, YYYY').toString()
 
     if (this.state.partyOne && this.state.partyTwo && this.state.ohioVolume && this.state.ohioReporter && this.state.ohioFirstPage && this.state.regionalVolume && this.state.regionalReporter && this.state.regionalFirstPage && this.state.year && this.state.district) {
       this.setState({
@@ -107,6 +116,12 @@ export default class SupremePost extends React.Component {
       this.setState({
         citation: `, ${this.state.ohioVolume} ${this.state.ohioReporter} ${this.state.ohioFirstPage},${this.state.pinpointDisplay} ${this.state.regionalVolume} ${this.state.regionalReporter} ${this.state.regionalFirstPage} ${this.state.districtDisplay}`
       //i.e. Smith v. Smith, 234 Ohio App.3d, 423 N.E.3d (8th Dist.2002)
+      })
+      this.setState({
+        fullCitation: `${newPartyOne} v. ${newPartyTwo}, ${this.state.ohioVolume} ${this.state.ohioReporter} ${this.state.ohioFirstPage},${this.state.pinpointDisplay} ${this.state.regionalVolume} ${this.state.regionalReporter} ${this.state.regionalFirstPage} ${this.state.districtDisplay}`
+      })
+      this.setState({
+        createdAt: now
       })
     }
   }
@@ -178,6 +193,7 @@ export default class SupremePost extends React.Component {
       pinpointNumber: "",
       pinpointDisplay: "",
       year: "",
+      fullCitation: ""
     })
   }
   startCopyCitation = (citationText) => {
@@ -192,6 +208,26 @@ export default class SupremePost extends React.Component {
   }
   handleStartCitation = (e) => {
     e.preventDefault();
+  }
+  handleSaveCitation = () => {
+    this.setState({
+      saveCitation: true
+    })
+  }
+  handleClearSaveCitation = () => {
+    this.setState({
+      saveCitation: false
+    }) 
+  }
+  handleAddType = (e) => {
+    this.setState({
+      type: e.target.value
+    }) 
+  }
+  handleAddNote = (e) => {
+    this.setState({
+      note: e.target.value
+    }) 
   }
   render() {
     return (
@@ -252,7 +288,24 @@ export default class SupremePost extends React.Component {
             handleRemoveCitation={this.handleRemoveCitation}
             citation={this.state.citation}
           />
+          <SaveCitation
+            fullCitation={this.state.fullCitation}
+            saveCitation={this.state.saveCitation}
+            handleSaveCitation={this.handleSaveCitation}
+          />
         </div>
+        <SaveModal
+          fullCitation={this.state.fullCitation}
+          saveCitation={this.state.saveCitation}
+          handleClearSaveCitation={this.handleClearSaveCitation}
+          history={this.props.history}
+          createdAt={this.state.createdAt}
+          type={this.state.type} 
+          note={this.state.note}
+          dispatch={this.props.dispatch}
+          handleAddType={this.handleAddType}
+          handleAddNote={this.handleAddNote}
+        />
       </div>
     );
   }

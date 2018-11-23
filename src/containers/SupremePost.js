@@ -1,7 +1,5 @@
 import React from 'react';
 import term from '../term';
-import { connect } from 'react-redux';
-import selectCitations from '../selectors/citations';
 import AddParties from '../components/AddParties';
 import AddOhioVolume from '../components/AddOhioVolume';
 import AddRegionalVolume from '../components/AddRegionalVolume';
@@ -13,7 +11,6 @@ import Citation from '../components/Citation';
 import RemoveCitation from '../components/RemoveCitation';
 import CopyCitation from '../components/CopyCitation';
 import SaveCitation from '../components/SaveCitation';
-import { addCitation } from '../actions/citations';
 import moment from 'moment';
 import SaveModal from '../components/SaveModal';
 
@@ -127,7 +124,6 @@ export default class SupremePost extends React.Component {
         createdAt: now
       })
     }
-    console.log(this.state.createdAt)
   }
   handleOhioVolume = (e) => {
     this.setState({
