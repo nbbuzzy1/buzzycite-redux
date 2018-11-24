@@ -1,15 +1,15 @@
 .dashboard__court {
-  text-decoration: none;
   background: $gold;
-  color: $dark-grey;
-  margin: $s-size 0;
-  font-size: $font-size-large;
-  font-weight: bold;
-  padding: $s-size;
   border-radius: .5rem;
+  color: $dark-grey;
   display: flex;
   flex-wrap: wrap;
+  font-size: $font-size-large;
+  font-weight: bold;
   justify-content: space-between;
+  margin: $s-size 0;
+  padding: $s-size;
+  text-decoration: none;
   @media (max-width: 40rem) {
     display: block;
     text-align: center;

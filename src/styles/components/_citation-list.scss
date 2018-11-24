@@ -12,12 +12,12 @@
 }
 
 .content-container__citation-list {
-  margin: 0 auto;
-  padding: 0 $l-size;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto $s-size auto;
   max-width: 130rem;
+  padding: 0 $l-size;
   @media (max-width: 40rem) {
     padding: 0;
   }
@@ -25,9 +25,9 @@
 
 .citation-container {
   background: $dark-grey;
+  border-bottom: $off-white solid 1px;
   display: flex;
   word-break: break-word;
-  border-bottom: $off-white solid 1px;
 }
 
 .list-header {
@@ -40,53 +40,16 @@
 }
 
 .citation {  
-  padding: $s-size;
-  display: flex;
   align-items: center;
+  display: flex;
+  padding: $s-size;
   width: 30rem;
 }
 
-.list-header__citation {
-  padding: $s-size;
-  display: flex;
-  flex-wrap: wrap;
-  width: 30rem;
-}
-
-.citation__date {
-  padding: $s-size;
-  display: flex;
-  align-items: center;
-  width: 15rem;
-  @media (max-width: 50rem) {
-    display: none;
-  }
-}
-
-.list-header__date {
-  padding: $s-size;
-  display: flex;
-  align-items: center;
-  width: 15rem;
-  @media (max-width: 50rem) {
-    display: none;
-  }
-}
-
-.citation__type {
-  padding: $s-size;
+.citation__date, .citation__type {
   align-items: center;
   display: flex;
-  width: 15rem;
-  @media (max-width: 50rem) {
-    display: none;
-  }
-}
-
-.list-header__type {
   padding: $s-size;
-  align-items: center;
-  display: flex;
   width: 15rem;
   @media (max-width: 50rem) {
     display: none;
@@ -94,16 +57,9 @@
 }
 
 .citation__note {
-  padding: $s-size;
-  display: flex;
   align-items: center;
-  width: 70rem;
-}
-
-.list-header__note {
-  padding: $s-size;
   display: flex;
-  align-items: center;
+  padding: $s-size;
   width: 70rem;
 }
 
@@ -118,6 +74,6 @@
 }
 
 .list-header__button {
-  visibility: hidden;
   padding: $s-size;
+  visibility: hidden;
 }

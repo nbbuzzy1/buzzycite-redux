@@ -15,22 +15,6 @@
   width: 20rem;
 }
 
-.button:hover {
-  color: $gold;
-}
-
-.button--copy {
-  margin: 0 $s-size $s-size $s-size;
-}
-
-.button--remove {
-  margin: 0 $s-size $s-size $s-size;
-}
-
-.button--save {
-  margin: 0 $s-size;
-}
-
 .button__layout {
   display: flex;
   flex-wrap: wrap;
@@ -38,10 +22,19 @@
   margin: 0 auto $s-size auto;
 }
 
-@media (max-width: 500px) {
-  .button {
+.button:hover {
+  color: $gold;
+}
 
-  }
+.button--copy, .button--remove {
+  margin: 0 $s-size $s-size $s-size;
+}
+
+.button--save {
+  margin: 0 $s-size;
+}
+
+@media (max-width: 500px) {
   .button--copy {
     margin-bottom: $s-size;
   }
