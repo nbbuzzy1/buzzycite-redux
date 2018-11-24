@@ -24,6 +24,9 @@
   text-align: center;
   justify-content: center;
   width: 10rem;
+  @media (max-width: 50rem) {
+    display: none;
+  }
 }
 
 .text-input-filter {

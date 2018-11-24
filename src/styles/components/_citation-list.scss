@@ -70,6 +70,9 @@
   align-items: center;
   display: flex;
   width: 15rem;
+  @media (max-width: 50rem) {
+    display: none;
+  }
 }
 
 .list-header__type {
@@ -77,6 +80,9 @@
   align-items: center;
   display: flex;
   width: 15rem;
+  @media (max-width: 50rem) {
+    display: none;
+  }
 }
 
 .citation__note {
