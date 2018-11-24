@@ -18,6 +18,19 @@
   @extend .text-input;
 }
 
+.select-filter {
+  @extend .text-input;
+  margin-left: $s-size;
+  text-align: center;
+  justify-content: center;
+  width: 10rem;
+}
+
+.text-input-filter {
+  @extend .text-input;
+  width: 30rem;
+}
+
 // .textarea {
 //   @extend .text-input;
 //   height: 10rem;

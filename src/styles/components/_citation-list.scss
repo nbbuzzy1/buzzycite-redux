@@ -1,119 +1,109 @@
+.citation-list__title {
+  // text-align: center;
+}
+
+.citation-list-filter-container {
+  display: flex;
+}
+
+.content-container__citation-list {
+  margin: 0 auto;
+  padding: 0 $l-size;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 130rem;
+}
+
 .citation-container {
-  display: flex;
-}
-
-.citation {
   background: $dark-grey;
-  border: $off-white solid .5px;
-  padding: $s-size;
-  align-items: center;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 25rem;
-  word-break: break-all;
-}
-
-.citation__date {
-  background: $dark-grey;
-  border: $off-white solid .5px;
-  padding: $s-size;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15rem;
-  word-break: break-all;
-}
-
-.citation__type {
-  background: $dark-grey;
-  border: $off-white solid .5px;
-  padding: $s-size;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-wrap: break-word;
-  width: 15rem;
-  word-break: break-all;
-}
-
-.citation__note {
-  background: $dark-grey;
-  border: $off-white solid .5px;
-  padding: $s-size;
-  display: flex;
-  align-items: center;
-  width: 60rem;
-  word-break: break-all;
+  word-break: break-word;
+  border-bottom: $off-white solid 1px;
 }
 
 .list-header {
   align-items: center;
-  background: $off-white;
+  background: $dark-grey;
+  border-bottom: 1.5px solid $off-white;
   color: $off-white;
   display: flex;
-  max-width: 124.6rem;
+  word-break: break-word;
+}
+
+.citation {  
+  padding: $s-size;
+  display: flex;
+  align-items: center;
+  width: 30rem;
 }
 
 .list-header__citation {
-  background: $dark-grey;
-  // border: $off-white solid 1px;
   padding: $s-size;
-  align-items: center;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
-  width: 25rem;
-
+  width: 30rem;
 }
-.list-header__date {
-  background: $dark-grey;
-  // border: $off-white solid 1px;
+
+.citation__date {
   padding: $s-size;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 15rem;
-  word-break: break-all;
+  @media (max-width: 50rem) {
+    display: none;
+  }
+}
 
+.list-header__date {
+  padding: $s-size;
+  display: flex;
+  align-items: center;
+  width: 15rem;
+  @media (max-width: 50rem) {
+    display: none;
+  }
+}
+
+.citation__type {
+  padding: $s-size;
+  align-items: center;
+  display: flex;
+  width: 15rem;
 }
 
 .list-header__type {
-  background: $dark-grey;
-  // border: $off-white solid 1px;
   padding: $s-size;
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-wrap: break-word;
   width: 15rem;
-  word-break: break-all;
+}
+
+.citation__note {
+  padding: $s-size;
+  display: flex;
+  align-items: center;
+  width: 70rem;
 }
 
 .list-header__note {
-  background: $dark-grey;
-  // border: $off-white solid 1px;
   padding: $s-size;
   display: flex;
   align-items: center;
-  width: 69.6rem;
-  justify-content: center;
-  // word-break: break-all;
+  width: 70rem;
 }
 
 .citation__button {
-  background: $blue;
-  border: $off-white solid 1px;
-  color: white;
+  background: $dark-grey;
+  border: none;
+  color: $gold;
   display: flex;
-  font-size: $font-size-large;
-  font-weight: bold;
   justify-content: center;
   padding: $s-size;
   text-decoration: none;
-  width: 9.6rem;
+}
+
+.list-header__button {
+  visibility: hidden;
+  padding: $s-size;
 }

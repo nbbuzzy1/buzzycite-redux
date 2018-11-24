@@ -9,10 +9,7 @@ const DashboardPage = () => (
         <div className="dashboard__court-title">Ohio Supreme Court</div> 
         <div className="dashboard__court-date">May 1, 2002 and After</div>
       </Link>
-      <Link className="dashboard__court" to="/SupremePre">
-        <div>Ohio Supreme Court</div> 
-        <div>Before May 1, 2012</div>
-      </Link>
+
       <Link className="dashboard__court" to="/AppealPostPrint">
         <div>Ohio Appeals Court (Print)</div>
         <div>May 1, 2002 and After</div>
@@ -20,6 +17,10 @@ const DashboardPage = () => (
       <Link className="dashboard__court" to="/AppealPostNonPrint">
         <div>Ohio Appeals Court (Non-Print)</div> 
         <div>May 1, 2002 and After</div>
+      </Link>
+      <Link className="dashboard__court" to="/SupremePre">
+        <div>Ohio Supreme Court</div> 
+        <div>Before May 1, 2012</div>
       </Link>
       <Link className="dashboard__court" to="/AppealPrePrint">
         <div>Ohio Appeals Court (Print)</div>

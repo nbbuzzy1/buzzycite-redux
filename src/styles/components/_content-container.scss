@@ -1,7 +1,7 @@
 .content-container {
   margin: 0 auto;
   max-width: 80rem;
-  padding: 0 $m-size;
+  padding: 0 $l-size;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -9,10 +9,3 @@
   flex-grow: 1;
 }
 
-.content-container__citation-list {
-  @extend .content-container;
-  max-width: 130rem;
-  flex-grow: 1;
-  flex-wrap: wrap;
-
-}
