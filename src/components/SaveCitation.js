@@ -6,7 +6,7 @@ import { addCitation } from '../actions/citations';
 const SaveCitation = (props) => (
   <div>
     {props.fullCitation && <button 
-      className="button"
+      className="button button--save"
       onClick={props.handleSaveCitation}>Save citation</button>}
   </div>
 )

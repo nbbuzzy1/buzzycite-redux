@@ -19,11 +19,15 @@
   color: $gold;
 }
 
-.button--remove {
-  margin: 0 $s-size;
+.button--copy {
+  margin: 0 $s-size $s-size $s-size;
 }
 
-.button--copy {
+.button--remove {
+  margin: 0 $s-size $s-size $s-size;
+}
+
+.button--save {
   margin: 0 $s-size;
 }
 

@@ -20,8 +20,11 @@
 .modal {
   background: $grey;
   color: $gold;
-  max-width: 90rem;
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
   outline: none;
   padding: $l-size;
   text-align: center;
+  max-width: 90%;
 }
