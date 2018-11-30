@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
-import { addCitation } from '../actions/citations';
+import { startAddCitation } from '../actions/citations';
 
 const SaveModal = (props) => (
   <Modal
@@ -31,7 +31,7 @@ const SaveModal = (props) => (
     <button 
       className="button"
       onClick={() => {
-        props.dispatch(addCitation({ 
+        props.dispatch(startAddCitation({ 
           fullCitation: props.fullCitation, 
           createdAt: props.createdAt, 
           type: props.type, 
