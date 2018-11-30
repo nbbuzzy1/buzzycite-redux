@@ -213,6 +213,7 @@ export default class SupremePost extends React.Component {
   handleStartCitation = (e) => {
     e.preventDefault();
   }
+
   handleSaveCitation = () => {
     this.setState({
       saveCitation: true

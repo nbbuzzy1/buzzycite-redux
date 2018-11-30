@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { startAddCitation } from '../actions/citations';
 
+
+
 const SaveModal = (props) => (
   <Modal
     isOpen={props.saveCitation}
@@ -10,6 +12,7 @@ const SaveModal = (props) => (
     contentLabel="SaveModal"
     closeTimeoutMS={200}
     className="modal"
+    ariaHideApp={false}
   >
     <h3>{props.fullCitation}</h3>
     <h3>{props.createdAt}</h3>
