@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { removeCitation } from '../actions/citations';
+import { startRemoveCitation } from '../actions/citations';
 
 const CitationListItem = ({ dispatch, fullCitation, id, type, note, createdAt }) => (
     <div className="citation-container">
@@ -17,22 +17,9 @@ const CitationListItem = ({ dispatch, fullCitation, id, type, note, createdAt })
         {note}
       </div>
       <button className="citation__button" onClick={() => {
-        dispatch(removeCitation({ id }))
+        dispatch(startRemoveCitation({ id }))
       }}><i className="fa fa-lg fa-trash" aria-hidden="true"></i></button>
     </div>
-
 );
-
-// <input 
-// autoFocus 
-// className="text-input" 
-// type="text" 
-// id="type" 
-// placeholder="Type" 
-// onChange={(e) => {
-//   let userValue = e.target.value;
-//   dispatch(addType({type: userValue}))
-// }}
-// />
 
 export default connect()(CitationListItem);

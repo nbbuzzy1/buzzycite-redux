@@ -31,6 +31,14 @@ export const removeCitation = ({ id } = {}) => ({
   id
 });
 
+export const startRemoveCitation = ({ id } = {}) => {
+  return (dispatch) => {
+    return database.ref(`citations/${id}`).remove().then(() => {
+      dispatch(removeCitation({ id }))
+    });
+  };
+};
+
 // EDIT_CASE
 export const editCitation = (id, updates) => ({
   type: 'EDIT_CITATION',
