@@ -28,7 +28,7 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -45,36 +45,3 @@ firebase.auth().onAuthStateChanged((user) => {
     history.push('/');
   }
 });
-
-
-
-
-
-
-
-
-
-// renderApp();
-
-// const state = store.getState();
-// const visibleCitations = getVisibleCitations(state.citations, state.filters);
-// console.log(visibleCitations)
-
-// store.dispatch(startAddCitation({ 
-//   fullCitation: 'State v. Smith, 23 Ohio St.3d 43, 2012-Ohio-23423, 234 N.E.3d 53', 
-//   createdAt: 'Nov 22, 2018', 
-//   type: 'Criminal Law', 
-//   note: 'All criminals are guilty and should go to prison' 
-// }));
-// store.dispatch(startAddCitation({ 
-//   fullCitation: 'John Smith v. Ins. Comp. America, 23 Ohio St.3d 43, 2012-Ohio-23423, 234 N.E.3d 53', 
-//   createdAt: 'Nov 23, 2018', 
-//   type: 'Insurance', 
-//   note: 'None' 
-// }));
-// store.dispatch(startAddCitation({ 
-//   fullCitation: 'Very Long Party Name v. Very Long Party Name Two', 
-//   createdAt: 'Nov 24, 2018', 
-//   type: 'Test', 
-//   note: 'All criminals are guilty and should go to prisonAll criminals are guilty and should go to prisonAll criminals are guilty and should go to prison' 
-// }));
