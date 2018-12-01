@@ -27,6 +27,8 @@ export default (state = citationsReducerDefaultState, action) => {
           return citation;
         };
       });
+    case 'SET_CITATIONS':
+      return action.citations;
     default:
       return state;
   }
