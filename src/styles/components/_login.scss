@@ -1,0 +1,42 @@
+.login-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 $l-size;
+}
+.loginTitle {
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+}
+
+.button-login {
+  background: $blue;
+  border: 0;
+  color: white;
+  display: flex;
+  height: 5rem;
+  font-size: $font-size-large;
+  font-weight: bold;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: $s-size;
+  text-decoration: none;
+  width: 20rem;
+}
+
+.button-login:hover {
+  color: $gold;
+}
+
+#loginScale {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $l-size;
+}

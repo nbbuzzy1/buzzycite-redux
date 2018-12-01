@@ -8,12 +8,13 @@ export const Header = ({ startLogout }) => (
     <div className="content-container">
       <div className="header__content">
         <Link to="/dashboard" className="header__title">
-          <h1>BuzzyCite 2.0</h1>
+          <h1>BuzzyCite</h1>
         </Link>
-        <Link to="/CitationList" className="header__title">
-          <i className="fas fa-lg fa-2x fa-balance-scale"></i>
+        <Link to="/CitationList" className="header__citationList">
+          <div className="scaleLabel">My Citations</div>
+          <i id="headerScale" className="fas fa-lg fa-2x fa-balance-scale"></i>
         </Link>
-        <button onClick={startLogout}>Logout</button>
+        <button className="header__button" onClick={startLogout}>Logout</button>
       </div>
     </div>
   </header>
