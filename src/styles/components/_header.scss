@@ -20,13 +20,13 @@
 .header__citationList {
   color: $gold;
   display: flex;
-  margin: 0 $s-size 0 auto;
+  margin: 0 3rem 0 auto;
   text-decoration: none;
 }
 
 .scaleLabel {
   font-weight: bold;
-  @media (max-width: 50rem) {
+  @media (max-width: 40rem) {
     display: none;
   }
 }
@@ -44,9 +44,7 @@
   justify-content: flex-end;
   font-size: $font-size-medium;
   font-weight: bold;
-  max-width: 100%;
   padding: 0;
   text-decoration: none;
-  width: 10rem;
 }
 
