@@ -9,24 +9,8 @@ export default (state = citationsReducerDefaultState, action) => {
         ...state,
         action.citation
       ];
-    // case 'ADD_TYPE':
-    //   return [
-    //     ...state,
-    //     action.citation
-    //   ];
     case 'REMOVE_CITATION':
       return state.filter(({ id }) => id !== action.id);
-    case 'EDIT_CITATION':
-      return state.map((citation) => {
-        if (citation.id === action.id) {
-          return {
-            ...citation,
-            ...action.updates
-          };
-        } else {
-          return citation;
-        };
-      });
     case 'SET_CITATIONS':
       return action.citations;
     default:
