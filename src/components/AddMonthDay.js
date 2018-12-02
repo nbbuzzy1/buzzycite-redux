@@ -21,6 +21,6 @@ const AddWestlawLexis = (props) => (
       <input value={props.day} className="text-input" type="number" id="day" placeholder="Day" onChange={props.handleDay}/>
     </div>
   </div>
-)
+);
 
 export default AddWestlawLexis;

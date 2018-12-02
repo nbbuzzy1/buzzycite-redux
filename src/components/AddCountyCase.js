@@ -9,6 +9,6 @@ const AddCountyCase = (props) => (
       <input value={props.caseNo} required className="text-input" type="text" id="caseNo" placeholder="Case Number" onChange={props.handleCaseNo}/>
     </div>
   </div>
-)
+);
 
 export default AddCountyCase;

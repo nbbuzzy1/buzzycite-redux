@@ -1,7 +1,5 @@
-import uuid from 'uuid'
 import database from '../firebase/firebase';
 
-// ADD_CASE
 export const addCitation = (citation) => ({
   type: 'ADD_CITATION',
   citation
@@ -21,12 +19,11 @@ export const startAddCitation = (citationData = {}) => {
       dispatch(addCitation({
         id: ref.key,
         ...citation
-      }))
-    })
-  }
-}
+      }));
+    });
+  };
+};
 
-// REMOVE_CASE
 export const removeCitation = ({ id } = {}) => ({
   type: 'REMOVE_CITATION',
   id
@@ -40,8 +37,6 @@ export const startRemoveCitation = ({ id } = {}) => {
     });
   };
 };
-
-// SET_CITATIONS
 
 export const setCitations = (citations) => ({
   type: 'SET_CITATIONS',
@@ -59,26 +54,7 @@ export const startSetCitations = () => {
           ...childSnapshot.val()
         });
       });
-
-      dispatch(setCitations(citations))
+      dispatch(setCitations(citations));
     });
   };
 };
-
-// EDIT_CASE
-// export const editCitation = (id, updates) => ({
-//   type: 'EDIT_CITATION',
-//   id,
-//   updates
-// });
-
-// export const addType = (
-//   {
-//     type = ''
-//   } = {}
-// ) => ({
-//   type: 'ADD_TYPE',
-//   citation: {
-//     type
-//   }
-// })

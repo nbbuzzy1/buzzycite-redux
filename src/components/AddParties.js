@@ -9,6 +9,6 @@ const AddParties = (props) => (
       <input value={props.partyTwo} required className="text-input" type="text" id="partyTwo" placeholder="Party Two" onChange={props.handlePartyTwo}/>
     </div>
   </div>
-)
+);
 
 export default AddParties;

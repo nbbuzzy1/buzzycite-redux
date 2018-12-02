@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Citation = (props) => (
-  <div id="displayedCitation">
+  <div>
     <h3><i>{props.parties}</i>{props.citation}</h3>
   </div>
-)
+);
 
 export default Citation;

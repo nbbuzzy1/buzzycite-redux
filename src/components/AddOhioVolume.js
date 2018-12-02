@@ -17,6 +17,6 @@ const AddOhioVolume = (props) => (
       <input value={props.ohioFirstPage} required className="text-input" type="number" id="ohioFirstPage" placeholder="Ohio First Page" onChange={props.handleOhioFirstPage}/>
     </div>
   </div>
-)
+);
 
 export default AddOhioVolume;

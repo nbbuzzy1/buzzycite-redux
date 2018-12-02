@@ -17,6 +17,6 @@ const AddRegionalAppVolume = (props) => (
       <input value={props.regionalFirstPage} className="text-input" type="number" id="regionalFirstPage" placeholder="Regional First Page" onChange={props.handleRegionalFirstPage}/>
     </div>
   </div>
-)
+);
 
 export default AddRegionalAppVolume;

@@ -12,7 +12,8 @@ const CitationListFilters = (props) => (
       value={props.filters.text} 
       onChange={(e) => {
         props.dispatch(setTextFilter(e.target.value))
-      }} />
+      }} 
+    />
     <select
       value={props.filters.sortBy}
       className="select-filter"
@@ -33,8 +34,8 @@ const CitationListFilters = (props) => (
 const mapStateToProps = (state) => {
   return {
     filters: state.filters
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(CitationListFilters);
 
