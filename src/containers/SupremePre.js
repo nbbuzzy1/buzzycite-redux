@@ -13,7 +13,7 @@ import SaveCitation from '../components/SaveCitation';
 import SaveModal from '../components/SaveModal';
 import moment from 'moment';
 
-export default class SupremePost extends React.Component {
+export default class SupremePre extends React.Component {
   state = {
     partyOne: "",
     partyTwo: "", 
