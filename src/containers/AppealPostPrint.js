@@ -1,5 +1,6 @@
 import React from 'react';
 import term from '../term';
+import moment from 'moment';
 import AddParties from '../components/AddParties';
 import AddOhioAppVolume from '../components/AddOhioAppVolume';
 import AddRegionalAppVolume from '../components/AddRegionalAppVolume';
@@ -13,7 +14,6 @@ import RemoveCitation from '../components/RemoveCitation';
 import CopyCitation from '../components/CopyCitation';
 import SaveCitation from '../components/SaveCitation';
 import SaveModal from '../components/SaveModal';
-import moment from 'moment';
 
 export default class AppealPostPrint extends React.Component {
   state = {
@@ -26,12 +26,12 @@ export default class AppealPostPrint extends React.Component {
     regionalReporter: "",
     regionalFirstPage: "",
     regionalDisplay: "",
-    year: "",
-    pinpointNumber: "",
-    pinpointDisplay: "",
     webcite: "",
+    year: "",
     district: "",
     districtDisplay: "",
+    pinpointNumber: "",
+    pinpointDisplay: "",
     parties: "",
     citation: "",
     fullCitation: "",
@@ -43,13 +43,13 @@ export default class AppealPostPrint extends React.Component {
   handlePartyOne = (e) => {
     this.setState({
       partyOne: e.target.value
-    })
-  }
+    });
+  };
   handlePartyTwo = (e) => {
     this.setState({
       partyTwo: e.target.value,
-    })
-  }
+    });
+  };
   handleCitation =() => {
     const partyOne = this.state.partyOne;
     let specialTermsOne = partyOne
@@ -76,9 +76,9 @@ export default class AppealPostPrint extends React.Component {
           splitPartyOne[i] = term[y].abbTerm;
         } else if (splitPartyOne[i].toLowerCase() === term[y].pluralTerm) {
           splitPartyOne[i] = term[y].plTerm;
-        }
-      }
-    }
+        };
+      };
+    };
     let newPartyOne = splitPartyOne.join(" ");
   
     const partyTwo = this.state.partyTwo;
@@ -106,144 +106,152 @@ export default class AppealPostPrint extends React.Component {
           splitPartyTwo[i] = term[y].abbTerm;
         } else if (splitPartyTwo[i].toLowerCase() === term[y].pluralTerm) {
           splitPartyTwo[i] = term[y].plTerm;
-        }
-      }
-    }
+        };
+      };
+    };
     let newPartyTwo = splitPartyTwo.join(" ");
     const now = moment().format('MMM D, YYYY').toString();
 
     if (this.state.partyOne && this.state.partyTwo && this.state.ohioVolume && this.state.ohioVolume && this.state.ohioFirstPage && this.state.webcite && this.state.year && this.state.district) {
       this.setState({
         parties: `${newPartyOne} v. ${newPartyTwo}`
-      })
+      });
       this.setState({
         citation: `, ${this.state.ohioVolume} ${this.state.ohioReporter} ${this.state.ohioFirstPage}, ${this.state.year}-Ohio-${this.state.webcite}${this.state.regionalDisplay}${this.state.districtDisplay}${this.state.pinpointDisplay}`
-      //i.e. Smith v. Smith, 234 Ohio App.3d, 2012-Ohio-1234, 423 N.E.3d (8th Dist.)
-      })
+      });
       this.setState({
         fullCitation: `${newPartyOne} v. ${newPartyTwo}, ${this.state.ohioVolume} ${this.state.ohioReporter} ${this.state.ohioFirstPage}, ${this.state.year}-Ohio-${this.state.webcite}${this.state.regionalDisplay}${this.state.districtDisplay}${this.state.pinpointDisplay}`
-      })
+        //i.e. Smith v. Smith, 234 Ohio App.3d, 2012-Ohio-1234, 423 N.E.3d (8th Dist.)
+      });
       this.setState({
         createdAt: now
-      })
-    }
-  }
+      });
+    };
+  };
   handleOhioVolume = (e) => {
     this.setState({
       ohioVolume: e.target.value
-    })
-  }
+    });
+  };
   handleOhioReporter = (e) => {
     this.setState({
       ohioReporter: e.target.value
-    })
-  }
+    });
+  };
   handleOhioFirstPage = (e) => {
     this.setState({
       ohioFirstPage: e.target.value
-    })
-  }
+    });
+  };
   handleRegionalVolume = (e) => {
     this.setState({
       regionalVolume: e.target.value
-    })
-  }
+    });
+  };
   handleRegionalReporter = (e) => {
     this.setState({
       regionalReporter: e.target.value
-    })
-  }
+    });
+  };
   handleRegionalFirstPage = (e) => {
     this.setState({
       regionalFirstPage: e.target.value,
       regionalDisplay: `, ${this.state.regionalVolume} ${this.state.regionalReporter} ${e.target.value}`
-    })
-    if (e.target.value === "") {
+    });
+    if (!e.target.value) {
       this.setState({
         regionalDisplay: ""
-      })
-    }
-  }
-  handleYear = (e) => {
-    this.setState({
-      year: e.target.value
-    })
-  }
-  handlePinpoint = (e) => {
-    this.setState({
-      pinpointNumber: e.target.value,
-      pinpointDisplay: `, ¶ ${e.target.value}`
-    })
-    if (e.target.value === "") {
-      this.setState({
-        pinpointDisplay: ""
-      })
-    }
-  }
+      });
+    };
+  };
   handleWebcite = (e) => {
     this.setState({
       webcite: e.target.value
-    })
-  }
+    });
+  };
+  handleYear = (e) => {
+    this.setState({
+      year: e.target.value
+    });
+  };
   handleDistrict = (e) => {
     this.setState({
       district: e.target.value,
       districtDisplay: ` (${e.target.value} Dist.)`
-    })
-  }
+    });
+    if (!e.target.value) {
+      this.setState({
+        districtDisplay: ""
+      });
+    };
+  };
+  handlePinpoint = (e) => {
+    this.setState({
+      pinpointNumber: e.target.value,
+      pinpointDisplay: `, ¶ ${e.target.value}`
+    });
+    if (!e.target.value) {
+      this.setState({
+        pinpointDisplay: ""
+      });
+    };
+  };
+  handleStartCitation = (e) => {
+    e.preventDefault();
+  };
+  startCopyCitation = (citationText) => {
+    let copyArea = document.getElementById('fullCitation');
+    copyArea.innerHTML = citationText;
+    copyArea.focus();
+    document.execCommand("selectAll");
+    document.execCommand("copy");
+  };
+  handleCopyCitation = () => {
+    this.startCopyCitation(`<i>${this.state.parties}</i>${this.state.citation}`);
+  };
   handleRemoveCitation = () => {
     ohioAppReporter.value = "";
     regionalReporter.value = "";
     district.value = "";
     this.setState({
-      citation: "",
-      parties: "",
       partyOne: "",
       partyTwo: "",
       ohioVolume: "",
       ohioFirstPage: "",
       regionalVolume: "",
       regionalFirstPage: "",
+      regionalDisplay: "",
+      webcite: "",
+      year: "",
+      district: "",
+      districtDisplay: "",
       pinpointNumber: "",
       pinpointDisplay: "",
-      year: "",
-      webcite: "",
-      fullCitation: ""
-    })
-  }
-  startCopyCitation = (citationText) => {
-    let copyArea = document.getElementById('fullCitation')
-    copyArea.innerHTML = citationText
-    copyArea.focus()
-    document.execCommand("selectAll");
-    document.execCommand("copy");
-  }
-  handleCopyCitation = () => {
-    this.startCopyCitation(`<i>${this.state.parties}</i>${this.state.citation}`);
-  }
-  handleStartCitation = (e) => {
-    e.preventDefault();
-  }
+      fullCitation: "",
+      parties: "",
+      citation: "",
+    });
+  };
   handleSaveCitation = () => {
     this.setState({
       saveCitation: true
-    })
-  }
+    });
+  };
   handleClearSaveCitation = () => {
     this.setState({
       saveCitation: false
-    }) 
-  }
+    });
+  };
   handleAddType = (e) => {
     this.setState({
       type: e.target.value
-    }) 
-  }
+    }); 
+  };
   handleAddNote = (e) => {
     this.setState({
       note: e.target.value
-    }) 
-  }
+    });
+  };
   render() {
     return (
       <div className="content-container">
@@ -308,24 +316,24 @@ export default class AppealPostPrint extends React.Component {
             citation={this.state.citation}
           />
           <SaveCitation
+            handleSaveCitation={this.handleSaveCitation}
             fullCitation={this.state.fullCitation}
             saveCitation={this.state.saveCitation}
-            handleSaveCitation={this.handleSaveCitation}
           />
         </div>
         <SaveModal
           fullCitation={this.state.fullCitation}
           saveCitation={this.state.saveCitation}
           handleClearSaveCitation={this.handleClearSaveCitation}
-          history={this.props.history}
           createdAt={this.state.createdAt}
-          type={this.state.type} 
+          handleAddType={this.handleAddType}
+          type={this.state.type}
+          handleAddNote={this.handleAddNote} 
           note={this.state.note}
           dispatch={this.props.dispatch}
-          handleAddType={this.handleAddType}
-          handleAddNote={this.handleAddNote}
+          history={this.props.history}
         />
       </div>
     );
-  }
-}
+  };
+};

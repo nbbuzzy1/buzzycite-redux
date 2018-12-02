@@ -17,8 +17,7 @@ import SaveModal from '../components/SaveModal';
 export default class AppealPostNonPrint extends React.Component {
   state = {
     partyOne: "",
-    partyTwo: "",
-    createdAt: "", 
+    partyTwo: "", 
     district: "",
     county: "",
     caseNo: "",
@@ -29,6 +28,7 @@ export default class AppealPostNonPrint extends React.Component {
     parties: "",
     citation: "",
     fullCitation: "",
+    createdAt: "",
     saveCitation: false,
     type: "None",
     note: "None"
