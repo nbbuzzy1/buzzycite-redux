@@ -1,3 +1,4 @@
+//Full abbreviation list
 
 const term = [
   {

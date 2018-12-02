@@ -11,4 +11,4 @@ export default (citations, { text, sortBy }) => {
       return a.type.toLowerCase() > b.type.toLowerCase() ? 1 : -1;
     }
   });
-}
+};

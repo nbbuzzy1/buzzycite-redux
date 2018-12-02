@@ -1,5 +1,3 @@
-// Filters Reducer
-
 const filtersReducerDefaultState = {
   text: '',
   sortBy: 'date',
@@ -16,13 +14,13 @@ export default (state = filtersReducerDefaultState, action) => {
       return {
         ...state,
         sortBy: 'date',
-      }
+      };
     case 'SORT_BY_TYPE':
       return {
         ...state,
         sortBy: 'type'
-      }
+      };
     default:
       return state;
-  }
+  };
 };

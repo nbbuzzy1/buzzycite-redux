@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Nick Buzzy",
-  "license": "MIT",
+  "license": "Contact author",
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",

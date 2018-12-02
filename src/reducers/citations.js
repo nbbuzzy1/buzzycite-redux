@@ -1,5 +1,3 @@
-// Cases Reducer
-
 const citationsReducerDefaultState = [];
 
 export default (state = citationsReducerDefaultState, action) => {
@@ -15,5 +13,5 @@ export default (state = citationsReducerDefaultState, action) => {
       return action.citations;
     default:
       return state;
-  }
+  };
 };

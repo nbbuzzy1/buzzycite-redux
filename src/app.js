@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import { firebase } from './firebase/firebase';
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetCitations } from './actions/citations';
 import { login, logout } from './actions/auth';
-import 'normalize.css/normalize.css';
-import './styles/styles.scss';
 import LoadingPage from './containers/LoadingPage';
-import { firebase } from './firebase/firebase';
 
 const store = configureStore();
 
