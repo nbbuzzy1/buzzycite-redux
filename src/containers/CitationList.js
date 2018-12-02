@@ -7,7 +7,7 @@ import CitationListFilters from '../components/CitationListFilters';
 const CitationList = (props) => (
   <div className="content-container__citation-list">
     <h1 className="citation-list__title">Citation List</h1>
-    <div className="citation-list-filter-container">
+    <div className="citation-list__filter">
       <CitationListFilters />
     </div>
     <div className="list-header">

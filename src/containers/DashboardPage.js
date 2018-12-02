@@ -6,10 +6,9 @@ const DashboardPage = () => (
     <div className="content-container">
       <h1 className="dashboard__title">Pick Court</h1>
       <Link className="dashboard__court" to="/SupremePost">
-        <div className="dashboard__court-title">Ohio Supreme Court</div> 
-        <div className="dashboard__court-date">May 1, 2002 and After</div>
+        <div>Ohio Supreme Court</div> 
+        <div>May 1, 2002 and After</div>
       </Link>
-
       <Link className="dashboard__court" to="/AppealPostPrint">
         <div>Ohio Appeals Court (Print)</div>
         <div>May 1, 2002 and After</div>
@@ -32,7 +31,6 @@ const DashboardPage = () => (
       </Link>
     </div>
   </div>
-
 );
 
 export default DashboardPage;

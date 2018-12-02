@@ -22,13 +22,13 @@ const AppRouter = () => (
       <Switch>
         <PublicRoute path="/" component={LoginPage} exact={true} />
         <PrivateRoute path="/dashboard" component={DashboardPage} />
-        <PrivateRoute path="/supremepost" component={SupremePost} />
-        <PrivateRoute path="/supremepre" component={SupremePre} />
-        <PrivateRoute path="/appealpostprint" component={AppealPostPrint} />
-        <PrivateRoute path="/appealpostnonprint" component={AppealPostNonPrint} />
-        <PrivateRoute path="/appealpreprint" component={AppealPrePrint} />
-        <PrivateRoute path="/appealprenonprint" component={AppealPreNonPrint} />
-        <PrivateRoute path="/citationlist" component={CitationList} />
+        <PrivateRoute path="/SupremePost" component={SupremePost} />
+        <PrivateRoute path="/SupremePre" component={SupremePre} />
+        <PrivateRoute path="/AppealPostPrint" component={AppealPostPrint} />
+        <PrivateRoute path="/AppealPostNonPrint" component={AppealPostNonPrint} />
+        <PrivateRoute path="/AppealPrePrint" component={AppealPrePrint} />
+        <PrivateRoute path="/AppealPreNonPrint" component={AppealPreNonPrint} />
+        <PrivateRoute path="/CitationList" component={CitationList} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

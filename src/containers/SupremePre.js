@@ -226,7 +226,7 @@ export default class SupremePre extends React.Component {
       <div className="content-container">
         <div>
           <h2>Ohio Supreme Court</h2>
-          <h3>Decided Before May 1, 2002</h3>
+          <h3>Before May 1, 2002</h3>
         </div>
         <form onSubmit={this.handleStartCitation}>
           <AddParties 
