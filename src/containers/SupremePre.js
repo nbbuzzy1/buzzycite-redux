@@ -1,5 +1,6 @@
 import React from 'react';
 import term from '../term';
+import moment from 'moment';
 import AddParties from '../components/AddParties';
 import AddOhioVolume from '../components/AddOhioVolume';
 import AddRegionalVolume from '../components/AddRegionalVolume';
@@ -11,7 +12,6 @@ import RemoveCitation from '../components/RemoveCitation';
 import CopyCitation from '../components/CopyCitation';
 import SaveCitation from '../components/SaveCitation';
 import SaveModal from '../components/SaveModal';
-import moment from 'moment';
 
 export default class SupremePre extends React.Component {
   state = {
@@ -37,13 +37,13 @@ export default class SupremePre extends React.Component {
   handlePartyOne = (e) => {
     this.setState({
       partyOne: e.target.value
-    })
-  }
+    });
+  };
   handlePartyTwo = (e) => {
     this.setState({
       partyTwo: e.target.value,
-    })
-  }
+    });
+  };
   handleCitation =() => {
     const partyOne = this.state.partyOne;
     let specialTermsOne = partyOne
@@ -70,9 +70,9 @@ export default class SupremePre extends React.Component {
           splitPartyOne[i] = term[y].abbTerm;
         } else if (splitPartyOne[i].toLowerCase() === term[y].pluralTerm) {
           splitPartyOne[i] = term[y].plTerm;
-        }
-      }
-    }
+        };
+      };
+    };
     let newPartyOne = splitPartyOne.join(" ");
   
     const partyTwo = this.state.partyTwo;
@@ -100,74 +100,87 @@ export default class SupremePre extends React.Component {
           splitPartyTwo[i] = term[y].abbTerm;
         } else if (splitPartyTwo[i].toLowerCase() === term[y].pluralTerm) {
           splitPartyTwo[i] = term[y].plTerm;
-        }
-      }
-    }
+        };
+      };
+    };
     let newPartyTwo = splitPartyTwo.join(" ");
-    const now = moment().format('MMM D, YYYY').toString()
+    const now = moment().format('MMM D, YYYY').toString();
 
     if (this.state.partyOne && this.state.partyTwo && this.state.ohioVolume && this.state.ohioVolume && this.state.ohioFirstPage && this.state.regionalVolume && this.state.regionalReporter && this.state.regionalFirstPage && this.state.year) {
       this.setState({
         parties: `${newPartyOne} v. ${newPartyTwo}`
-      })
+      });
       this.setState({
         citation: `, ${this.state.ohioVolume} ${this.state.ohioReporter} ${this.state.ohioFirstPage},${this.state.pinpointDisplay} ${this.state.regionalVolume} ${this.state.regionalReporter} ${this.state.regionalFirstPage} (${this.state.year})`
-      //i.e. Smith v. Smith, 234 Ohio St.3d 234, 45 N.E.3d 77 (1999)
-      })
+      });
       this.setState({
         fullCitation: `${newPartyOne} v. ${newPartyTwo}, ${this.state.ohioVolume} ${this.state.ohioReporter} ${this.state.ohioFirstPage},${this.state.pinpointDisplay} ${this.state.regionalVolume} ${this.state.regionalReporter} ${this.state.regionalFirstPage} (${this.state.year})`
-      })
+        //i.e. Smith v. Smith, 234 Ohio St.3d 284, 285, 45 N.E.3d 77 (1999)
+      });
       this.setState({
         createdAt: now
-      })
-    }
-  }
+      });
+    };
+  };
   handleOhioVolume = (e) => {
     this.setState({
       ohioVolume: e.target.value
-    })
-  }
+    });
+  };
   handleOhioReporter = (e) => {
     this.setState({
       ohioReporter: e.target.value
-    })
-  }
+    });
+  };
   handleOhioFirstPage = (e) => {
     this.setState({
       ohioFirstPage: e.target.value
-    })
-  }
+    });
+  };
   handleRegionalVolume = (e) => {
     this.setState({
       regionalVolume: e.target.value
-    })
-  }
+    });
+  };
   handleRegionalReporter = (e) => {
     this.setState({
       regionalReporter: e.target.value
-    })
-  }
+    });
+  };
   handleRegionalFirstPage = (e) => {
     this.setState({
       regionalFirstPage: e.target.value
-    })
-  }
+    });
+  };
   handleYear = (e) => {
     this.setState({
       year: e.target.value
-    })
-  }
+    });
+  };
   handlePinpoint = (e) => {
     this.setState({
       pinpointNumber: e.target.value,
       pinpointDisplay: ` ${e.target.value},`
-    })
+    });
     if (e.target.value === "") {
       this.setState({
         pinpointDisplay: ""
-      })
-    }
-  }
+      });
+    };
+  };
+  handleStartCitation = (e) => {
+    e.preventDefault();
+  };
+  startCopyCitation = (citationText) => {
+    let copyArea = document.getElementById('fullCitation')
+    copyArea.innerHTML = citationText
+    copyArea.focus()
+    document.execCommand("selectAll");
+    document.execCommand("copy");
+  };
+  handleCopyCitation = () => {
+    this.startCopyCitation(`<i>${this.state.parties}</i>${this.state.citation}`);
+  };
   handleRemoveCitation = () => {
     ohioReporter.value = "";
     regionalReporter.value = "";
@@ -177,48 +190,37 @@ export default class SupremePre extends React.Component {
       partyOne: "",
       partyTwo: "",
       ohioVolume: "",
+      ohioReporter: "",
       ohioFirstPage: "",
       regionalVolume: "",
+      regionalReporter: "",
       regionalFirstPage: "",
+      year: "",
       pinpointNumber: "",
       pinpointDisplay: "",
-      year: "",
       fullCitation: ""
-    })
-  }
-  startCopyCitation = (citationText) => {
-    let copyArea = document.getElementById('fullCitation')
-    copyArea.innerHTML = citationText
-    copyArea.focus()
-    document.execCommand("selectAll");
-    document.execCommand("copy");
-  }
-  handleCopyCitation = () => {
-    this.startCopyCitation(`<i>${this.state.parties}</i>${this.state.citation}`);
-  }
-  handleStartCitation = (e) => {
-    e.preventDefault();
-  }
+    });
+  };
   handleSaveCitation = () => {
     this.setState({
       saveCitation: true
-    })
-  }
+    });
+  };
   handleClearSaveCitation = () => {
     this.setState({
       saveCitation: false
-    }) 
-  }
+    });
+  };
   handleAddType = (e) => {
     this.setState({
       type: e.target.value
-    }) 
-  }
+    });
+  };
   handleAddNote = (e) => {
     this.setState({
       note: e.target.value
-    }) 
-  }
+    });
+  };
   render() {
     return (
       <div className="content-container">
@@ -275,24 +277,24 @@ export default class SupremePre extends React.Component {
             citation={this.state.citation}
           />
           <SaveCitation
+            handleSaveCitation={this.handleSaveCitation}
             fullCitation={this.state.fullCitation}
             saveCitation={this.state.saveCitation}
-            handleSaveCitation={this.handleSaveCitation}
           />
         </div>
         <SaveModal
           fullCitation={this.state.fullCitation}
           saveCitation={this.state.saveCitation}
           handleClearSaveCitation={this.handleClearSaveCitation}
-          history={this.props.history}
           createdAt={this.state.createdAt}
-          type={this.state.type} 
+          handleAddType={this.handleAddType}
+          type={this.state.type}
+          handleAddNote={this.handleAddNote} 
           note={this.state.note}
           dispatch={this.props.dispatch}
-          handleAddType={this.handleAddType}
-          handleAddNote={this.handleAddNote}
+          history={this.props.history}
         />
       </div>
     );
-  }
-}
+  };
+};
