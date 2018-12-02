@@ -336,5 +336,5 @@ export default class AppealPreNonPrint extends React.Component {
         />
       </div>
     );
-  }
-}
+  };
+};

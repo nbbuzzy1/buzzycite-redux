@@ -190,15 +190,19 @@ export default class SupremePost extends React.Component {
       partyOne: "",
       partyTwo: "",
       ohioVolume: "",
+      ohioReporter: "",
       ohioFirstPage: "",
       regionalVolume: "",
+      regionalReporter: "",
       regionalFirstPage: "",
       pinpointNumber: "",
       pinpointDisplay: "",
       year: "",
+      district: "",
+      districtDisplay: "",
       webcite: "",
       fullCitation: ""
-    })
+    });
   }
   startCopyCitation = (citationText) => {
     let copyArea = document.getElementById('fullCitation')
