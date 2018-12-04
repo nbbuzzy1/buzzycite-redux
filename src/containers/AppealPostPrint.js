@@ -259,7 +259,7 @@ export default class AppealPostPrint extends React.Component {
       <div className="content-container">
         <div>
           <h2>Ohio Court of Appeals</h2>
-          <h3>Decided May 1, 2002 and After</h3>
+          <h3>May 1, 2002 and After</h3>
           <h4>Print Published</h4>
         </div>
         <form onSubmit={this.handleStartCitation}>
