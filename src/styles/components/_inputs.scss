@@ -8,6 +8,7 @@
   max-width: 100%;
   padding: $s-size;
   width: 90rem;
+  -webkit-appearance:none;
 }
 
 .text-input::placeholder {
@@ -15,15 +16,7 @@
 }
 
 .select {
-  background: #323330;
-  border: 1px solid #f7f7f7;
-  color: #f7f7f7;
-  font-size: 1.6rem;
-  font-weight: 300;
-  margin: 0 auto 1.2rem auto;
-  max-width: 100%;
-  padding: 1.2rem;
-  width: 90rem;
+  @extend .text-input;
 }
 
 .select-filter {
