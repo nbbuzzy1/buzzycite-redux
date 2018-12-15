@@ -29,6 +29,9 @@ const DashboardPage = () => (
         <div>Ohio Appeals Court (Non-Print)</div>
         <div>Before May 1, 2002</div>
       </Link>
+      <Link className="dashboard__court" to="/CustomCitation">
+        <div>Custom Citation</div>
+      </Link>  
     </div>
   </div>
 );

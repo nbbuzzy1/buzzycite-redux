@@ -8,6 +8,7 @@ import AppealPostPrint from '../containers/AppealPostPrint';
 import AppealPostNonPrint from '../containers/AppealPostNonPrint';
 import AppealPrePrint from '../containers/AppealPrePrint';
 import AppealPreNonPrint from '../containers/AppealPreNonPrint';
+import CustomCitation from '../containers/CustomCitation';
 import NotFoundPage from '../containers/NotFoundPage';
 import CitationList from '../containers/CitationList';
 import LoginPage from '../containers/LoginPage';
@@ -28,6 +29,7 @@ const AppRouter = () => (
         <PrivateRoute path="/AppealPostNonPrint" component={AppealPostNonPrint} />
         <PrivateRoute path="/AppealPrePrint" component={AppealPrePrint} />
         <PrivateRoute path="/AppealPreNonPrint" component={AppealPreNonPrint} />
+        <PrivateRoute path="/CustomCitation" component={CustomCitation} />
         <PrivateRoute path="/CitationList" component={CitationList} />
         <Route component={NotFoundPage} />
       </Switch>
