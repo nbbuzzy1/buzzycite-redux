@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { startRemoveCitation } from '../actions/citations';
 
-const CitationListItem = ({ dispatch, fullCitation, id, type, note, createdAt }) => (
+const CitationListItem = ({ dispatch, fullCitation, id, type, note, createdAt, createdAtDisplay }) => (
   <div className="citation-container">
     <div className="citation">
       {fullCitation}
     </div>
     <div className="citation__date">
-      {createdAt}
+      {createdAtDisplay}
     </div>
     <div className="citation__type">
       {type}

@@ -9,6 +9,7 @@ const CustomCitationButton = (props) => (
       props.dispatch(startAddCitation({ 
         fullCitation: props.fullCitation, 
         createdAt: props.createdAt, 
+        createdAtDisplay: props.createdAtDisplay,
         type: props.type, 
         note: props.note 
       }));

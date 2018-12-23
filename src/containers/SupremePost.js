@@ -14,7 +14,6 @@ import CopyCitation from '../components/CopyCitation';
 import SaveCitation from '../components/SaveCitation';
 import SaveModal from '../components/SaveModal';
 
-
 export default class SupremePost extends React.Component {
   state = {
     partyOne: "",
@@ -32,7 +31,8 @@ export default class SupremePost extends React.Component {
     parties: "",
     citation: "",
     fullCitation: "",
-    createdAt: "",
+    createdAt: moment().format(),
+    createdAtDisplay: '',
     saveCitation: false,
     type: "None",
     note: "None"
@@ -121,7 +121,7 @@ export default class SupremePost extends React.Component {
         //i.e. Smith v. Smith, 234 Ohio St.3d 75, 2012-Ohio-1234, 45 N.E.3d 77
       });
       this.setState({
-        createdAt: now
+        createdAtDisplay: now
       });
     };
   };
@@ -300,6 +300,7 @@ export default class SupremePost extends React.Component {
           saveCitation={this.state.saveCitation}
           handleClearSaveCitation={this.handleClearSaveCitation}
           createdAt={this.state.createdAt}
+          createdAtDisplay={this.state.createdAtDisplay}
           handleAddType={this.handleAddType}
           type={this.state.type}
           handleAddNote={this.handleAddNote} 

@@ -13,7 +13,7 @@ const SaveModal = (props) => (
     ariaHideApp={false}
   >
     <h3>{props.fullCitation}</h3>
-    <h3>{props.createdAt}</h3>
+    <h3>{props.createdAtDisplay}</h3>
     <input 
       autoFocus 
       className="text-input" 
@@ -35,6 +35,7 @@ const SaveModal = (props) => (
         props.dispatch(startAddCitation({ 
           fullCitation: props.fullCitation, 
           createdAt: props.createdAt, 
+          createdAtDisplay: props.createdAtDisplay,
           type: props.type, 
           note: props.note 
         }));

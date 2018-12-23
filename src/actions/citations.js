@@ -12,9 +12,10 @@ export const startAddCitation = (citationData = {}) => {
       fullCitation = '',
       type = '',
       note = '',
+      createdAtDisplay = '',
       createdAt = 0
     } = citationData;
-    const citation = { fullCitation, type, note, createdAt }
+    const citation = { fullCitation, type, note, createdAt, createdAtDisplay }
     database.ref(`users/${uid}/citations`).push(citation).then((ref) => {
       dispatch(addCitation({
         id: ref.key,

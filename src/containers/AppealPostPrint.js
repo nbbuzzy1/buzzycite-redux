@@ -35,7 +35,8 @@ export default class AppealPostPrint extends React.Component {
     parties: "",
     citation: "",
     fullCitation: "",
-    createdAt: "",
+    createdAt: moment().format(),
+    createdAtDisplay: '',
     saveCitation: false,
     type: "None",
     note: "None"
@@ -124,7 +125,7 @@ export default class AppealPostPrint extends React.Component {
         //i.e. Smith v. Smith, 234 Ohio App.3d, 2012-Ohio-1234, 423 N.E.3d (8th Dist.)
       });
       this.setState({
-        createdAt: now
+        createdAtDisplay: now
       });
     };
   };
@@ -328,6 +329,7 @@ export default class AppealPostPrint extends React.Component {
           saveCitation={this.state.saveCitation}
           handleClearSaveCitation={this.handleClearSaveCitation}
           createdAt={this.state.createdAt}
+          createdAtDisplay={this.state.createdAtDisplay}
           handleAddType={this.handleAddType}
           type={this.state.type}
           handleAddNote={this.handleAddNote} 

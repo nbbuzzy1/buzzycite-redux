@@ -35,7 +35,8 @@ export default class AppealPreNonPrint extends React.Component {
     parties: "",
     citation: "",
     fullCitation: "",
-    createdAt: "",
+    createdAt: moment().format(),
+    createdAtDisplay: '',
     saveCitation: false,
     type: "None",
     note: "None"
@@ -124,7 +125,7 @@ export default class AppealPreNonPrint extends React.Component {
         //i.e. Smith v. Smith, 8th Dist. Cuyahoga No. 2343, 2001 WL 234234 (Jan. 1, 2001)
       });
       this.setState({
-        createdAt: now
+        createdAtDisplay: now
       });
     };
   };
@@ -327,6 +328,7 @@ export default class AppealPreNonPrint extends React.Component {
           saveCitation={this.state.saveCitation}
           handleClearSaveCitation={this.handleClearSaveCitation}
           createdAt={this.state.createdAt}
+          createdAtDisplay={this.state.createdAtDisplay}
           handleAddType={this.handleAddType}
           type={this.state.type}
           handleAddNote={this.handleAddNote} 

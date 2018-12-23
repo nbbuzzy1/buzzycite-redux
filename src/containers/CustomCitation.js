@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 class CustomCitation extends React.Component {
   state = {
     fullCitation: "",
-    createdAt: "",
+    createdAt: moment().format(),
+    createdAtDisplay: '',
     saveCitation: false,
     type: "None",
     note: "None"
@@ -15,7 +16,7 @@ class CustomCitation extends React.Component {
     const now = moment().format('MMM D, YYYY').toString();
     this.setState({
       fullCitation: e.target.value,
-      createdAt: now
+      createdAtDisplay: now
     });
   };
   handleAddType = (e) => {
@@ -62,6 +63,7 @@ class CustomCitation extends React.Component {
         <CustomCitationButton 
           fullCitation={this.state.fullCitation}
           createdAt={this.state.createdAt}
+          createdAtDisplay={this.state.createdAtDisplay}
           type={this.state.type}
           note={this.state.note}
           dispatch={this.props.dispatch}

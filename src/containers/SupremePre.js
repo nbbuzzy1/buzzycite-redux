@@ -29,7 +29,8 @@ export default class SupremePre extends React.Component {
     parties: "",
     citation: "",
     fullCitation: "",
-    createdAt: "",
+    createdAt: moment().format(),
+    createdAtDisplay: '',
     saveCitation: false,
     type: "None",
     note: "None"
@@ -118,7 +119,7 @@ export default class SupremePre extends React.Component {
         //i.e. Smith v. Smith, 234 Ohio St.3d 284, 285, 45 N.E.3d 77 (1999)
       });
       this.setState({
-        createdAt: now
+        createdAtDisplay: now
       });
     };
   };
@@ -287,6 +288,7 @@ export default class SupremePre extends React.Component {
           saveCitation={this.state.saveCitation}
           handleClearSaveCitation={this.handleClearSaveCitation}
           createdAt={this.state.createdAt}
+          createdAtDisplay={this.state.createdAtDisplay}
           handleAddType={this.handleAddType}
           type={this.state.type}
           handleAddNote={this.handleAddNote} 
