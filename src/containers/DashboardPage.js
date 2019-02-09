@@ -32,6 +32,9 @@ const DashboardPage = () => (
       <Link className="dashboard__court" to="/CustomCitation">
         <div>Custom Citation</div>
       </Link>  
+      <Link className="dashboard__court" to="/AbbreviateTerm">
+        <div>Abbreviate Term</div>
+      </Link> 
     </div>
   </div>
 );

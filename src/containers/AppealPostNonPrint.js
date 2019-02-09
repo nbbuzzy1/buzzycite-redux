@@ -44,13 +44,13 @@ export default class AppealPostNonPrint extends React.Component {
       partyTwo: e.target.value
     });
   };
-  handleCitation =() => {
+  handleCitation = () => {
     const partyOne = this.state.partyOne;
     const newPartyOne = abbreviate(partyOne)
   
     const partyTwo = this.state.partyTwo;
     const newPartyTwo = abbreviate(partyTwo)
-    
+
     const now = moment().format('MMM D, YYYY').toString();
 
     if (this.state.partyOne && this.state.partyTwo && this.state.district && this.state.county && this.state.caseNo && this.state.webcite && this.state.year) {

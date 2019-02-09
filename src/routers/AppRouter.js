@@ -14,6 +14,7 @@ import CitationList from '../containers/CitationList';
 import LoginPage from '../containers/LoginPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import AbbreviateTerm from '../containers/AbbreviateTerm';
 
 export const history = createHistory();
 
@@ -30,6 +31,7 @@ const AppRouter = () => (
         <PrivateRoute path="/AppealPrePrint" component={AppealPrePrint} />
         <PrivateRoute path="/AppealPreNonPrint" component={AppealPreNonPrint} />
         <PrivateRoute path="/CustomCitation" component={CustomCitation} />
+        <PrivateRoute path="/AbbreviateTerm" component={AbbreviateTerm} />
         <PrivateRoute path="/CitationList" component={CitationList} />
         <Route component={NotFoundPage} />
       </Switch>
