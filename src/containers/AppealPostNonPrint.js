@@ -1,5 +1,5 @@
 import React from 'react';
-import term from '../term';
+import abbreviate from '../abbreviate';
 import moment from 'moment';
 import AddParties from '../components/AddParties';
 import AddYear from '../components/AddYear';
@@ -46,64 +46,11 @@ export default class AppealPostNonPrint extends React.Component {
   };
   handleCitation =() => {
     const partyOne = this.state.partyOne;
-    let specialTermsOne = partyOne
-      .replace("also known as", "a.k.a.")
-      .replace("Also Known As", "a.k.a.")
-      .replace("attorney general", "Atty. Gen.")
-      .replace("Attorney General", "Atty. Gen.")
-      .replace("doing business as", "d.b.a.")
-      .replace("Doing Business As", "d.b.a.")
-      .replace("formerly known as", "f.k.a.")
-      .replace("Formerly Known As", "f.k.a.")
-      .replace("in the matter of", "In re")
-      .replace("In the Matter of", "In re")
-      .replace("now known as", "n.k.a.")
-      .replace("Now Known As", "n.k.a.")
-      .replace("prosecuting attorney", "Pros. Atty.")
-      .replace("Prosecuting Attorney", "Pros. Atty.")
-      .replace("savings & loan", "S. & L.")
-      .replace("Savings & Loan", "S. & L.")
-    let splitPartyOne = specialTermsOne.trim().split(" ");
-    for (let i = 0; i < splitPartyOne.length; i++) {
-      for (let y = 0; y < term.length; y++) {
-        if (splitPartyOne[i].toLowerCase() === term[y].fullTerm) {
-          splitPartyOne[i] = term[y].abbTerm;
-        } else if (splitPartyOne[i].toLowerCase() === term[y].pluralTerm) {
-          splitPartyOne[i] = term[y].plTerm;
-        };
-      };
-    };
-    let newPartyOne = splitPartyOne.join(" ");
+    const newPartyOne = abbreviate(partyOne)
   
     const partyTwo = this.state.partyTwo;
-    let specialTermsTwo = partyTwo
-      .replace("also known as", "a.k.a.")
-      .replace("Also Known As", "a.k.a.")
-      .replace("attorney general", "Atty. Gen.")
-      .replace("Attorney General", "Atty. Gen.")
-      .replace("doing business as", "d.b.a.")
-      .replace("Doing Business As", "d.b.a.")
-      .replace("formerly known as", "f.k.a.")
-      .replace("Formerly Known As", "f.k.a.")
-      .replace("in the matter of", "In re")
-      .replace("In the Matter of", "In re")
-      .replace("now known as", "n.k.a.")
-      .replace("Now Known As", "n.k.a.")
-      .replace("prosecuting attorney", "Pros. Atty.")
-      .replace("Prosecuting Attorney", "Pros. Atty.")
-      .replace("savings & loan", "S. & L.")
-      .replace("Savings & Loan", "S. & L.")
-    let splitPartyTwo = specialTermsTwo.trim().split(" ");
-    for (let i = 0; i < splitPartyTwo.length; i++) {
-      for (let y = 0; y < term.length; y++) {
-        if (splitPartyTwo[i].toLowerCase() === term[y].fullTerm) {
-          splitPartyTwo[i] = term[y].abbTerm;
-        } else if (splitPartyTwo[i].toLowerCase() === term[y].pluralTerm) {
-          splitPartyTwo[i] = term[y].plTerm;
-        };
-      };
-    };
-    let newPartyTwo = splitPartyTwo.join(" ");
+    const newPartyTwo = abbreviate(partyTwo)
+    
     const now = moment().format('MMM D, YYYY').toString();
 
     if (this.state.partyOne && this.state.partyTwo && this.state.district && this.state.county && this.state.caseNo && this.state.webcite && this.state.year) {
