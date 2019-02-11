@@ -28,25 +28,31 @@ class AbbreviateTerm extends React.Component {
       abbTerm: abbreviateTerm
     });
   }
+  handleStartAbbreviation = (e) => {
+    e.preventDefault();
+  };
   render() {
     return (
       <div className="content-container">
-        <div>
-          <h2>Abbreviate Term</h2>
-        </div>
-        <input 
-          autoFocus 
-          className="text-input" 
-          type="text" 
-          placeholder="Enter Term" 
-          onChange={this.handleAddTerm} 
-        />
-        <div>
-          <button onClick={this.handleAbbreviateTerm} className="button">Abbreviate</button>
-        </div>
-        <div>
-          <h3 id="abbreviate" align="center">{this.state.abbTerm}</h3>
-        </div>
+        <form onSubmit={this.handleStartAbbreviation}>
+          <div>
+            <h2>Abbreviate Term</h2>
+          </div>
+          <input 
+            autoFocus 
+            required
+            className="text-input" 
+            type="text" 
+            placeholder="Enter Term" 
+            onChange={this.handleAddTerm} 
+          />
+          <div>
+            <button onClick={this.handleAbbreviateTerm} className="button">Abbreviate</button>
+          </div>
+          <div>
+            {this.state.fullTerm && <h3 id="abbreviate" align="center">{this.state.abbTerm}</h3>}
+          </div>
+        </form>
       </div>
     );
   };
